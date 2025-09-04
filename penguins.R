@@ -13,3 +13,12 @@ x <- na.omit(x)
 png("penguins-hist.png")
 hist(x, breaks = seq(40, 60, 2))
 dev.off()
+
+data <- read.csv("penguins.csv")
+x <- data$bill_length_mm
+
+# Ящик с усами для длины клюва
+
+png("penguins-boxplot.png")
+boxplot(x, ylab = "Bill length, mm")
+dev.off()
