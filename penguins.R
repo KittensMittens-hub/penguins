@@ -22,3 +22,18 @@ x <- data$bill_length_mm
 png("penguins-boxplot.png")
 boxplot(x, ylab = "Bill length, mm")
 dev.off()
+
+
+data <- read.csv("penguins.csv")
+
+data_clean <- na.omit(data.frame(
+  bill_length = as.numeric(data$bill_length_mm),
+  sex = data$sex
+))
+
+x <- data_clean$bill_length
+g <- data_clean$sex
+
+png("penguins-boxplot.png")
+boxplot(x ~ g, xlab = "Sex", ylab = "Bill length, mm")
+dev.off()
